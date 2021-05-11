@@ -12,7 +12,7 @@ logging.debug('\n----------- Start of main program -----------\n')
 # IMPORTS
 
 from plugboard import PlugBoard
-from rotors_steping_mechanism import RotorStepMechanism
+from rotors_stepping_mechanism import RotorStepMechanism
 from reference_values import *
 from machine_settings import *
 #################################################################################################
