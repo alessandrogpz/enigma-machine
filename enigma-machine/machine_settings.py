@@ -19,4 +19,4 @@ ukw_chosen = [args.ukw]
 # Plugboard input example = ["AB", "CD", "EF"]
 plugboard_pairs = plugboard_choices
 
-plain_text = 'This is Enigma'
+plain_text = plain_text_chosen

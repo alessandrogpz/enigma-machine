@@ -63,7 +63,7 @@ logging.debug("\nOUTPUT MESSAGE -------------------------------")
 # Print the encrypted message
 # Insert a space after every 4th element in the enc_list while printing
 print("\n---------------------------------------------------------------------------------")
-print("Encrypted text: ", end="")
+print("Ciphertext: ", end="")
 
 for letter in range(len(enc_text)):
     if count_letter == 3:

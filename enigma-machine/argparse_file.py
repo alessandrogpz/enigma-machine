@@ -12,6 +12,7 @@ rotor_positions = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','
 zusatzwalze_choices = ["ZW-B", "ZW-G"]
 ukw_choices = ["UKW-B-THIN","UKW-C-THIN"]
 plugboard_choices = []
+plain_text_chosen = ""
 
 parser = argparse.ArgumentParser(description = msg)
 
@@ -46,6 +47,8 @@ if number_of_pair != "":
         plugboard_choices.append(pair_chosen.upper())
     else:
         pass
+
+plain_text_chosen = input("Plaintext: ")
 
 parser.add_argument("-v", "--verbosity", help="increase output verbosity", action="count", default=0)
 
