@@ -1,11 +1,10 @@
 #################################################################################################
 import logging
-from rotor_encryption import RotorEncryption
 
 logging.basicConfig(level=logging.DEBUG, format='%(message)s')
 
-#logging.disable(logging.DEBUG) # When disabled: Show all rotors rotations and double stops 
-#logging.disable(logging.INFO)   # When disabled: Show all encryption process
+logging.disable(logging.DEBUG) # When disabled: Show all rotors rotations and double stops 
+logging.disable(logging.INFO)   # When disabled: Show all encryption process
 
 logging.debug('\n----------- Start of main program -----------\n')
 #################################################################################################
@@ -13,8 +12,10 @@ logging.debug('\n----------- Start of main program -----------\n')
 
 from plugboard import PlugBoard
 from rotors_stepping_mechanism import RotorStepMechanism
+from rotor_encryption import RotorEncryption
 from reference_values import *
 from machine_settings import *
+#from argparse_file import *
 #################################################################################################
 # MAIN ENGINE
 
@@ -61,7 +62,8 @@ logging.debug("\nOUTPUT MESSAGE -------------------------------")
 
 # Print the encrypted message
 # Insert a space after every 4th element in the enc_list while printing
-print("\nEncrypted text: ", end="")
+print("\n---------------------------------------------------------------------------------")
+print("Encrypted text: ", end="")
 
 for letter in range(len(enc_text)):
     if count_letter == 3:
@@ -70,7 +72,7 @@ for letter in range(len(enc_text)):
     else:
         count_letter += 1
         print(enc_text[letter], end="")
-
+print("\n---------------------------------------------------------------------------------")
 logging.debug("\n----------------------------------------------")
 
 logging.debug('\n---------- End of main program -----------\n')

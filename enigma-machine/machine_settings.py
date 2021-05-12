@@ -1,18 +1,22 @@
+##################################################################################################
+# IMPORTS
+
+from argparse_file import *
 ###################################################################################################
 # MACHINE SETTINGS & PLAIN TEXT 
 
-rotor_chosen = ["VI", "VII", "VIII"]
-rotor_offset = [1, 14, 21]
-rotor_positions = ["A","L","Q"]
+rotor_chosen = [args.rotor_1, args.rotor_2, args.rotor_3]
+rotor_offset = [args.rotor_1_offset, args.rotor_2_offset, args.rotor_3_offset]
+rotor_positions = [args.rotor_1_position, args.rotor_2_position, args.rotor_3_position]
 
 
-zusatzwalze_chosen = ["ZW-G"]
-zusatzwalze_offset = [12]
-zusatzwalze_position = ["D"]
+zusatzwalze_chosen = [args.zusatzwalze]
+zusatzwalze_offset = [args.zusatzwalze_offset]
+zusatzwalze_position = [args.zusatzwalze_position]
 
-ukw_chosen = ["UKW-C-THIN"]
+ukw_chosen = [args.ukw]
 
 # Plugboard input example = ["AB", "CD", "EF"]
-plugboard_pairs = ["AB", "CD", "EF","GH","IJ","KL","MN", "OP"]
+plugboard_pairs = plugboard_choices
 
 plain_text = 'This is Enigma'
