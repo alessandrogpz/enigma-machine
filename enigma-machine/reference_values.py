@@ -37,7 +37,8 @@ UKW_C_THIN = 'RDOBJNTKVEHMLFCWZAXGYIPSUQ'
 UKW_B_THIN_DICT = {'A': 'E', 'B': 'N', 'C': 'K', 'D': 'Q', 'E': 'A', 'F': 'U', 'G': 'Y', 'H': 'W', 'I': 'J', 'J': 'I', 'K': 'C', 'L': 'O', 'M': 'P', 'N': 'B', 'O': 'L', 'P': 'M', 'Q': 'D', 'R': 'X', 'S': 'Z', 'T': 'V', 'U': 'F', 'V': 'T', 'W': 'H', 'X': 'R', 'Y': 'G', 'Z': 'S'}
 UKW_C_THIN_DICT = {'A': 'R', 'B': 'D', 'C': 'O', 'D': 'B', 'E': 'J', 'F': 'N', 'G': 'T', 'H': 'K', 'I': 'V', 'J': 'E', 'K': 'H', 'L': 'M', 'M': 'L', 'N': 'F', 'O': 'C', 'P': 'W', 'Q': 'Z', 'R': 'A', 'S': 'X', 'T': 'G', 'U': 'Y', 'V': 'I', 'W': 'P', 'X': 'S', 'Y': 'U', 'Z': 'Q'}
 
-enc_text = [] # Stores all encrypted letters so they can be joined at the end of the encryption process
+enc_text = []       # Stores all encrypted letters one at a time.
+count_letter = 0    # Used while displaying the encrypted text to the user to divide the text into blocks of 4 letters each.
 ####################################################################################################
 # All ROTORS, ZW & UKW AVAILABLE
 

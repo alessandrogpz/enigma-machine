@@ -4,8 +4,8 @@ from rotor_encryption import RotorEncryption
 
 logging.basicConfig(level=logging.DEBUG, format='%(message)s')
 
-logging.disable(logging.DEBUG) # When disabled: Show all rotors rotations and double stops 
-logging.disable(logging.INFO)   # When disabled: Show all encryption process
+#logging.disable(logging.DEBUG) # When disabled: Show all rotors rotations and double stops 
+#logging.disable(logging.INFO)   # When disabled: Show all encryption process
 
 logging.debug('\n----------- Start of main program -----------\n')
 #################################################################################################
@@ -48,7 +48,7 @@ for letter in plain_text:
 
         enc_text.append(enc_letter)   
 
-    else:
+    elif letter != " ":
         enc_text.append(letter)
 
 logging.info("\nROTOR FINAL POSITIONS -----------------------")
@@ -57,8 +57,20 @@ logging.info("ROTOR 2: " + rotor_2.etw)
 logging.info("ROTOR 3: " + rotor_3.etw)
 logging.info("----------------------------------------------")
 
-logging.debug("\n----------------------------------------------")
-print("\nEncrypted text: "+ "".join(enc_text))
+logging.debug("\nOUTPUT MESSAGE -------------------------------")
+
+# Print the encrypted message
+# Insert a space after every 4th element in the enc_list while printing
+print("\nEncrypted text: ", end="")
+
+for letter in range(len(enc_text)):
+    if count_letter == 3:
+        count_letter = 0
+        print(enc_text[letter], end=" ")
+    else:
+        count_letter += 1
+        print(enc_text[letter], end="")
+
 logging.debug("\n----------------------------------------------")
 
 logging.debug('\n---------- End of main program -----------\n')
