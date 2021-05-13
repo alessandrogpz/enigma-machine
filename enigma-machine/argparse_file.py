@@ -1,6 +1,6 @@
 import argparse
 
-msg = """This an Enigma Machine simulator based on the M4 'Shark' (U-Boats) machines. 
+msg = """This is an Enigma Machine simulator based on the M4 'Shark' (U-Boats) machines. 
          The arguments needed to initialze the machine are in order for each rotor [Rotor] [Rotor Position] [Rotor Offset] and least of all the Reflector [Reflector].
          An example of a valid argument would be: I A 1 II B 2 III C 3 ZW-B D 4 UKW-B-THIN. 
          Afterwards you will be prompted to insert the of letter pairs used at the plugboard.
