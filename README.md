@@ -28,7 +28,7 @@ of all the Reflector ```[Reflector]```
 
 * The initial offset for the Rotors and Zusatzwalze are the numbers ```[1 - 26]```
 
-* The available Zusatzwalze are ```[ZW-B, ZW-B]```
+* The available Zusatzwalze are ```[ZW-B, ZW-G]```
 
 * The available Reflectors are ```[UKW-B-THIN, UKW-C-THIN]```
 
