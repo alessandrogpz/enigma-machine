@@ -1,9 +1,3 @@
-#################################################################################################
-import logging
-
-logging.basicConfig(level=logging.DEBUG, format='%(message)s')
-################################################################################################
-
 class PlugBoard:
     def __init__(self, letter, plugboard):
         self.letter = letter
@@ -16,16 +10,11 @@ class PlugBoard:
         Returns dict with all connections. 
         """
 
-        logging.debug("\nSTART OF PLUGBOARD DEBUGGER ---------------\n")
-
         plug_board = {}
 
         for pair in list_connections:
             plug_board[pair[0]] = pair[1]
             plug_board[pair[1]] = pair[0]
-
-        logging.debug("Plugboard: " + str(plug_board))
-        logging.debug("\nEND OF PLUGBOARD DEBUGGER -----------------\n")
 
         return plug_board
 
@@ -37,7 +26,6 @@ class PlugBoard:
 
         if self.letter in self.plugboard:
             letter = self.plugboard.get(self.letter)
-            logging.debug(f"\nLetter: '{self.plugboard.get(letter)}' Swaped by letter '{letter}' during plugboard passthrough.")
 
             return letter
         else:

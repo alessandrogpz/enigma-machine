@@ -1,10 +1,8 @@
-####################################################################################################
-# IMPORTS
-
 from rotors import Rotors
 from zw import Zusatzwalze
 from ukw import UKW
 from machine_settings import *
+
 ###################################################################################################
 # REFERENCE VALUES
 
@@ -97,7 +95,8 @@ zusatzwalze = Zusatzwalze(f"Zusaltzwalze {zusatzwalze_chosen[0]}",
                           zusatzwalze_offset[0], 
                           zusatzwalze_position[0])
 
-ukw = UKW(all_ukw_dict.get(ukw_chosen[0]), 
+ukw = UKW(f"Reflector {ukw_chosen[0]}", 
+          all_ukw_dict.get(ukw_chosen[0]), 
           all_ukw_dicts.get(ukw_chosen[0]), 
           ETW, 
           zusatzwalze_position[0])

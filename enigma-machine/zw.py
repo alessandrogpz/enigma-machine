@@ -1,9 +1,3 @@
-#################################################################################################
-import logging
-
-logging.basicConfig(level=logging.DEBUG, format='%(message)s')
-#################################################################################################
-
 class Zusatzwalze:
     """Code for creating an object for the Rotors"""
 
@@ -35,10 +29,6 @@ class Zusatzwalze:
         https://pastebin.com/DVip1ypK
         """
 
-        logging.debug("\nSTART OF ZUSALTZWALZE OFFSET DEBUGGER ---------------")
-        logging.debug("Alphabet:                   " + self.etw)
-        logging.debug("Zusatzwakze without offset: " + self.rotor)
-
         temp_list = []
         offset = (27 - self.offset) % 26
 
@@ -48,8 +38,4 @@ class Zusatzwalze:
             temp_list.append(new_letter)
 
         self.rotor = "".join(temp_list)
-        
-        logging.debug("\nRotor offset number:  " + str(self.offset))
-        logging.debug("\nAlphabet:                   " + self.etw)
-        logging.debug("Zusatzwakze with offset:    " + self.rotor)
-        logging.debug("END OF ZUSALTZWALZE OFFSET DEBUGGER -----------------\n")
+

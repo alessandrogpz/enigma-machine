@@ -1,9 +1,3 @@
-#################################################################################################
-import logging
-
-logging.basicConfig(level=logging.DEBUG, format='%(message)s')
-################################################################################################
-
 class Rotors:
     """Code for creating an object for the Rotors"""
 
@@ -39,10 +33,6 @@ class Rotors:
         http://users.telenet.be/d.rijmenants/en/enigmatech.htm
         """
 
-        logging.debug("\nSTARTING ROTOR OFFSET -------------------------")
-        logging.debug("Alphabet:             " + self.etw)
-        logging.debug("Rotor without offset: " + self.rotor)
-
         temp_list = []
         offset = (27 - self.offset) % 26
 
@@ -52,13 +42,6 @@ class Rotors:
             temp_list.append(new_letter)
 
         self.rotor = "".join(temp_list)
-        
-        logging.debug("\nRotor offset number:  " + str(self.offset))
-        logging.debug("\nAlphabet:             " + self.etw)
-        logging.debug("Rotor with offset:    " + self.rotor)
-        logging.debug("END ROTOR OFFSET -----------------------------\n")
-        
-        
 
     def rotate_rotor(self):
         """
@@ -66,12 +49,5 @@ class Rotors:
         with its indexes (sefl.etw) once.
         """
 
-        logging.debug("\nSTARTING ROTOR POSITION -----------------------")
-
         self.etw = self.etw[1:] + self.etw[:1]
         self.rotor = self.rotor[1:] + self.rotor[:1]
-
-        logging.debug("Rotor ETW:            " + self.etw)
-        logging.debug("Rotor Wiring:         " + self.rotor)
-
-        logging.debug("END ROTOR POSITION ----------------------------\n")

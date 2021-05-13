@@ -1,23 +1,8 @@
-#################################################################################################
-import logging
-
-logging.basicConfig(level=logging.DEBUG, format='%(message)s')
-
-logging.disable(logging.DEBUG) # When disabled: Show all rotors rotations and double stops 
-logging.disable(logging.INFO)   # When disabled: Show all encryption process
-
-logging.debug('\n----------- Start of main program -----------\n')
-#################################################################################################
-# IMPORTS
-
 from plugboard import PlugBoard
 from rotors_stepping_mechanism import RotorStepMechanism
 from rotor_encryption import RotorEncryption
 from reference_values import *
 from machine_settings import *
-#from argparse_file import *
-#################################################################################################
-# MAIN ENGINE
 
 # Create plugboard connections 
 plug_board = PlugBoard.create_plug_board(plugboard_pairs)
@@ -30,8 +15,6 @@ zusatzwalze.offset_rotor()
 
 for letter in plain_text:
     letter = letter.upper()
-
-    logging.debug("\nStarting encryption process with letter: " + letter)
 
     if letter.isalpha():
 
@@ -52,14 +35,6 @@ for letter in plain_text:
     elif letter != " ":
         enc_text.append(letter)
 
-logging.info("\nROTOR FINAL POSITIONS -----------------------")
-logging.info("ROTOR 1: " + rotor_1.etw)
-logging.info("ROTOR 2: " + rotor_2.etw)
-logging.info("ROTOR 3: " + rotor_3.etw)
-logging.info("----------------------------------------------")
-
-logging.debug("\nOUTPUT MESSAGE -------------------------------")
-
 # Print the encrypted message
 # Insert a space after every 4th element in the enc_list while printing
 print("\n---------------------------------------------------------------------------------")
@@ -72,8 +47,23 @@ for letter in range(len(enc_text)):
     else:
         count_letter += 1
         print(enc_text[letter], end="")
-print("\n---------------------------------------------------------------------------------")
-logging.debug("\n----------------------------------------------")
+print("\n---------------------------------------------------------------------------------\n")
 
-logging.debug('\n---------- End of main program -----------\n')
+# Verbosity output
+if args.quiet >= 1:
+    pass
+
+elif args.quiet == 0:
+
+    print("Machine End Settings:")
+    print(rotor_1.rotor_name + ", Position", rotor_1.etw[0] + ", Offset", str(rotor_1.offset)) 
+    print(rotor_2.rotor_name + ", Position", rotor_2.etw[0] + ", Offset", str(rotor_2.offset)) 
+    print(rotor_3.rotor_name + ", Position", rotor_3.etw[0] + ", Offset", str(rotor_3.offset)) 
+
+    print(zusatzwalze.rotor_name + ", Position", zusatzwalze.etw[0] + ", Offset", str(zusatzwalze.offset)) 
+    print(ukw.rotor_name)
+
+    print("Plugboard", plugboard_choices,"\n")
+else:
+    pass
 
